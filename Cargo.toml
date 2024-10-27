@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "rhabarberbar-core",
+    "rhabarberbar-cli",
+]
+resolver = "2"
