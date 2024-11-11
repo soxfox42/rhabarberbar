@@ -82,17 +82,12 @@ fn main() {
             for record in &sav.records {
                 let name_raw = record.label();
                 let name = name_raw
+                    .trim()
                     .chars()
                     .map(|c| if is_valid_filename_char(c) { c } else { '_' })
                     .collect::<String>();
 
-                let mut output_path = output_dir.join(format!("{name}.bdx"));
-                let mut counter = 1;
-                while output_path.exists() {
-                    counter += 1;
-                    output_path.set_file_name(format!("{name} ({counter}).bdx"));
-                }
-
+                let output_path = output_dir.join(format!("{name}.bdx"));
                 let bdx_bytes = record.to_bytes_bdx();
                 std::fs::write(&output_path, &bdx_bytes).unwrap();
             }
