@@ -43,5 +43,15 @@ pub(crate) struct BdxHeader {
     instrument_headers: [InstrumentHeader; 8],
     short_unknown: u16,
     name_length: u16,
+    // Working around a bytemuck limitation
     pub contributor: [u8; 128],
+    contributor_rest: [u8; 28],
+}
+
+#[derive(Debug, Clone, Copy, Pod, Zeroable)]
+#[repr(C, packed)]
+pub(crate) struct BdxSavHeader {
+    sixteen: u8,
+    pub length: u16,
+    zero: u8,
 }
