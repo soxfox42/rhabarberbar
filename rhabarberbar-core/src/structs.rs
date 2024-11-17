@@ -2,7 +2,7 @@ use bytemuck::{Pod, Zeroable};
 
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
 #[repr(C)]
-pub(crate) struct InstrumentHeader {
+pub struct InstrumentHeader {
     volume: u16,
     voice: u16,
     stereo: i8,
@@ -14,13 +14,13 @@ pub(crate) struct InstrumentHeader {
 
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
 #[repr(C, packed)]
-pub(crate) struct BdxHeader {
-    checksums: [u16; 2],
+pub struct BdxHeader {
+    pub checksums: [u16; 2],
     magic: [u8; 8],
     identifier: [u8; 4],
     pub slot_used: u32,
-    compressed_length: u32,
-    hmac_sha1: [u8; 20],
+    pub compressed_length: u32,
+    pub hmac_sha1: [u8; 20],
     karaoke_stuff: [u8; 20],
     redundant: [u8; 8],
     pub label: [[u8; 32]; 3],
@@ -50,8 +50,8 @@ pub(crate) struct BdxHeader {
 
 #[derive(Debug, Clone, Copy, Pod, Zeroable)]
 #[repr(C, packed)]
-pub(crate) struct BdxSavHeader {
-    sixteen: u8,
+pub struct BdxSavHeader {
+    pub sixteen: u8,
     pub length: u16,
-    zero: u8,
+    pub zero: u8,
 }
