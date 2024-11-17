@@ -1,5 +1,8 @@
 # Rhabarberbar
 
+> [!WARNING]
+> Something is currently wrong with this tool, the saves it generates can sometimes crash when browsing songs. Still investigating.
+
 A command line tool for modifying the set of custom (downloaded/studio) songs inside a [Jam with the Band](https://en.wikipedia.org/wiki/Jam_with_the_Band) save file. Written in Rust.
 
 ## How do I install this?
@@ -9,28 +12,12 @@ Make sure you have [Rust](https://www.rust-lang.org/) installed.
 ```
 git clone https://github.com/soxfox42/rhabarberbar.git
 cd rhabarberbar
-cargo install --path .
+cargo install --path rhabarberbar-cli
 ```
 
 ## How do I use it?
 
-Unpack your save file with:
-
-```
-rhabarberbar unpack your.sav songs
-```
-
-Change `songs` to any other directory you want to unpack into. Change around the songs, then repack your save file with:
-
-```
-rhabarberbar pack your.sav songs
-```
-
-If you don't want to overwrite your original save, you can specify a new location for the output save:
-
-```
-rhabarberbar pack your.sav songs -o new.sav
-```
+Just run `rhabarberbar edit yoursave.sav`, then press <kbd>Enter</kbd> once you've added or removed songs in the window that appears.
 
 ## Why is it called "rhabarberbar"?
 
