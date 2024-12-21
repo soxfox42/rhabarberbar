@@ -17,7 +17,10 @@ cargo install --path rhabarberbar-cli
 
 ## How do I use it?
 
-Just run `rhabarberbar edit yoursave.sav`, then press <kbd>Enter</kbd> once you've added or removed songs in the window that appears.
+1. Run `rhabarberbar edit yoursave.sav`.
+2. Add songs to the file explorer that appear.
+3. Press <kbd>Enter</kbd> in the shell once you're done.
+4. Aberakadabera!
 
 ## Why is it called "rhabarberbar"?
 
